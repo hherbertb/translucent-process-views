@@ -1,0 +1,35 @@
+# Pinned to the environment the paper's numbers were produced in.
+#
+# These are exact pins, not ranges, on purpose.  The evaluation harness reports
+# clustering baselines whose output depends on the scikit-learn version and
+# model-quality scores that depend on the pm4py version; kappa itself is pure
+# Python and is version-independent.  Running with different versions silently
+# shifts every baseline row while leaving the kappa rows byte-identical, which
+# is exactly how the published tables and evaluation/results/ drifted apart.
+#
+# Python 3.13.5.  Reproduce with:
+#   python -m venv venv
+#   venv/Scripts/python -m pip install -r requirements.txt
+#   venv/Scripts/python evaluation/run_evaluation.py --full
+
+pm4py==2.7.23.7
+scikit-learn==1.9.0
+numpy==2.5.2
+scipy==1.18.1
+pandas==3.0.5
+networkx==3.6.1
+
+gensim==4.4.0            # evaluation: D2V-TC (trace2vec) baseline.  REQUIRED for
+                         # --full: without it the baseline is dropped from the
+                         # tables, so run_evaluation.py refuses to start.
+
+rustworkx==0.18.1        # translucent fitness reachability graph (vendored tconf)
+automata-lib==9.2.0      # translucent precision DFA construction (vendored tconf)
+
+streamlit==1.62.0        # GUI
+graphviz==0.21           # model rendering; the `dot` binary must be on PATH
+altair==6.2.2            # GUI charts
+matplotlib==3.11.1       # evaluation figures
+reportlab==5.0.1         # figures/make_request_handling_mockup.py -> PDF
+
+pytest==9.1.1
