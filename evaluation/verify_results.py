@@ -41,6 +41,15 @@ LABEL = {
 }
 
 
+def _expand_labels(label_map: dict) -> dict:
+    """A paired row prints "CF-TC Ward", not "CF-TC Ward (GT)": accept both."""
+    out = dict(label_map)
+    for method, label in label_map.items():
+        if method.endswith("@k") and label.endswith(" (GT)"):
+            out.setdefault(method + "#plain", label[: -len(" (GT)")])
+    return out
+
+
 def parse_tex(path: Path) -> "dict[str, list[str]]":
     """Row label -> list of cell strings, with \\textbf and $ stripped."""
     rows = {}
@@ -90,7 +99,7 @@ def compare(table: str, label: str, col: str, printed: str, value: float) -> Non
 
 def main(project: Path) -> int:
     tables = project / "tables"
-    inv = {v: k for k, v in LABEL.items()}
+    inv = {v: k.replace('#plain', '') for k, v in _expand_labels(LABEL).items()}
 
     # ---------------------------------------------------------------- Table 2
     e1 = pd.read_csv(RES / "e1_separation.csv")
@@ -112,7 +121,14 @@ def main(project: Path) -> int:
             problems.append(f"Table 2: unknown row label {label!r}")
             continue
         for col, printed in zip(("ari", "nmi", "purity", "sig_per_variant"), cells):
-            compare("Table 2", label, col, printed, two_stage(e1, col, True).get(m, np.nan))
+            if "/" in printed:          # "GT / auto": check both halves
+                gt_txt, auto_txt = [x.strip() for x in printed.split("/")]
+                auto = f"{m.split('@')[0]}@auto"
+                compare("Table 2", label, col, gt_txt, two_stage(e1, col, True).get(m, np.nan))
+                compare("Table 2", label + " (auto)", col, auto_txt,
+                        two_stage(e1, col, True).get(auto, np.nan))
+            else:
+                compare("Table 2", label, col, printed, two_stage(e1, col, True).get(m, np.nan))
 
     # ---------------------------------------------------------------- Table 3
     e2 = pd.read_csv(RES / "e2_quality.csv")

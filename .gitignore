@@ -1,0 +1,35 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.streamlit/
+*.egg-info/
+.venv/
+venv/
+
+# scratch
+_cmp.html
+_fw.pdf
+
+# LaTeX build artefacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+evaluation/*.log
+evaluation/*.out
+
+# Other people's papers, and our own unpublished submissions: not ours to publish.
+reference_papers/
+
+# Internal review log: candid notes on the paper, not part of the artefact.
+REVIEW_TODO.md
+
+# The paper sources and their build output (31 MB).  Delete these two lines if you
+# want the LaTeX published alongside the code.
+paper_final/
+paper_eval/
+
+# Result CSVs under evaluation/results/ are deliberately NOT ignored: they are the
+# numbers the paper reports, and the verification scripts check the tables against
+# them.  The rule below only covers stray CSVs written next to the scripts.
+evaluation/*.csv

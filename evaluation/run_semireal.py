@@ -327,9 +327,7 @@ def _cluster(name, log, k):
 #: auto runs paired in a single cell, so the full set costs 9 rows instead of 14.
 _SR_SINGLE = ["global", "kappa", "kappa_supported", "kappa_acts",
               "classical_variants", "translucent_variants"]
-# CF-TC k-means is dropped here as it is in the merged table: the two CF-TC
-# linkages behave alike and both tables should show the same baseline set
-_SR_PAIRED = ["cf_ward", "ctx_kmeans", "enabled", "trace2vec"]
+_SR_PAIRED = ["cf_kmeans", "cf_ward", "ctx_kmeans", "enabled", "trace2vec"]
 _SR_LABEL = {
     "global": "global", "kappa": r"$\kappa$ (ours)",
     "kappa_supported": r"$\kappa$ + support (ours)",

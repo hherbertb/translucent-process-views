@@ -677,11 +677,10 @@ _QUALITY_COLS = [
 
 #: model quality is reported for k = ground truth only; the silhouette variants
 #: differ by a few thousandths and cost nine rows
-#: Two rows the tables do not need: CF-TC k-means is the weaker of the two CF-TC
-#: linkages, and ATTR-TC "all" lies between the clean and the noisy attributes on
-#: every measure.  Both stay in the result CSVs; at 13 pages the tables show the
-#: variant that carries the argument.
-_DISPLAY_DROP = {"cf_kmeans@k", "cf_kmeans@auto", "attr_all@k", "attr_all@auto"}
+#: Nothing is dropped from the tables any more: every baseline variant that is run
+#: is also shown, and the silhouette-chosen runs appear as "GT / auto" pairs in the
+#: ARI column rather than as their own rows (see `_pair_auto_ari`).
+_DISPLAY_DROP: set = set()
 _QUALITY_ROWS_PAPER = [m for m in _PAPER_ROWS
                        if not m.endswith("@auto") and m not in _DISPLAY_DROP]
 _PARTITION_ROWS_PAPER = _QUALITY_ROWS_PAPER
@@ -1197,6 +1196,31 @@ def _summary_combined(e1: pd.DataFrame, e2: pd.DataFrame) -> pd.DataFrame:
     return out.reindex(rows)
 
 
+def _pair_auto_ari(shown: pd.DataFrame, e1: pd.DataFrame) -> pd.DataFrame:
+    """Append the silhouette-chosen ARI to the ARI cell as ``GT / auto``.
+
+    Every clustering baseline is run twice: with `k` given and with `k` chosen by
+    the silhouette.  Printing both as separate rows doubles the height of the
+    table; pairing them costs no height and keeps the comparison visible, which
+    is what the GT / auto columns of the semi-real table already do.
+    """
+    global _PARTITION_ROWS_PAPER
+    keep, _PARTITION_ROWS_PAPER = _PARTITION_ROWS_PAPER, _PAPER_ROWS
+    full = _summary_partition(e1)
+    _PARTITION_ROWS_PAPER = keep
+
+    out, paired = shown.copy(), set()
+    for method in out.index:
+        auto = f"{method.split('@')[0]}@auto"
+        if not method.endswith("@k") or auto not in full.index:
+            continue
+        value = full.loc[auto, "ARI"]
+        if pd.notna(value):
+            out.loc[method, "ARI"] = f"{out.loc[method, 'ARI']} / {value:.3f}"
+            paired.add(method)
+    return out, paired
+
+
 def _write_tables(out: Path, quick: bool, e1, e2, e3, e4, e5=None, attr_df=None) -> None:
     # reduced 9-log table: rule before the last column ("kappa views" is a result,
     # not a log statistic) and an italic group-header per family stating its purpose
@@ -1225,7 +1249,17 @@ def _write_tables(out: Path, quick: bool, e1, e2, e3, e4, e5=None, attr_df=None)
     qual = _summary_quality(e2, case_weighted=False)
     qual_cw = _summary_quality(e2, case_weighted=True)
     _emit(part, "summary_partition_table.tex")
-    _emit(_summary_combined(e1, e2), "summary_combined_table.tex")
+    combined = _summary_combined(e1, e2)
+    paired, paired_rows = _pair_auto_ari(_bold_best(combined), e1)
+    labelled = _relabel(paired)
+    # a row whose ARI cell now reads "GT / auto" should not also be titled "(GT)"
+    labelled.index = pd.Index([
+        lbl.replace(" (GT)", "") if m in paired_rows else lbl
+        for m, lbl in zip(paired.index, labelled.index)])
+    (out / "summary_combined_table.tex").write_text(
+        labelled.to_latex(escape=False, na_rep="--",
+                          column_format="l" + "r" * combined.shape[1]),
+        encoding="utf-8")
     _emit(qual, "summary_quality_table.tex")
     _emit(qual_cw, "summary_quality_caseweighted_table.tex")
     part.join(qual, how="outer").to_csv(out / "summary.csv")
