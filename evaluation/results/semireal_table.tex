@@ -1,0 +1,19 @@
+\begin{tabular}{lrrrr}
+\toprule
+ & \multicolumn{2}{c}{hospital billing} & \multicolumn{2}{c}{road traffic} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+ & ARI & grp & ARI & grp \\
+\midrule
+global & 0.000 & 1 & 0.000 & 1 \\
+$\kappa$ (ours) & 0.870 & 141 & 0.065 & 44 \\
+$\kappa$ + support (ours) & 0.883 & 9 & 0.049 & 5 \\
+$\kappa_{\mathit{av}}$ (ours) & \textbf{0.949} & 14 & 0.043 & 7 \\
+variant discovery & 0.744 & 126 & 0.000 & 52 \\
+translucent-variant grouping & 0.869 & 164 & 0.049 & 65 \\
+\midrule
+CF-TC Ward & 0.608 / 0.001 & 4 / 2 & -0.002 / 0.003 & 3 / 8 \\
+CTX-TC & 0.673 / 0.629 & 4 / 3 & 0.873 / 0.024 & 3 / 2 \\
+EN-TC & 0.944 / 0.928 & 4 / 7 & \textbf{1.000} / 0.076 & 3 / 8 \\
+D2V-TC & 0.530 / 0.546 & 4 / 5 & 0.924 / 0.933 & 3 / 2 \\
+\bottomrule
+\end{tabular}

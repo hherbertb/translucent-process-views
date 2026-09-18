@@ -1,0 +1,13 @@
+log,decomposition,n_views,ari_vs_ground_truth,ari_vs_definition_4_8
+running_example,leftmost_longest,3,1.0,1.0
+running_example,rightmost_longest,3,1.0,1.0
+running_example,leftmost_shortest,3,1.0,1.0
+k_view_k4,leftmost_longest,4,1.0,1.0
+k_view_k4,rightmost_longest,4,1.0,1.0
+k_view_k4,leftmost_shortest,6,0.8821,0.8821
+parallel_choices,leftmost_longest,5,1.0,1.0
+parallel_choices,rightmost_longest,5,1.0,1.0
+parallel_choices,leftmost_shortest,10,0.8888,0.8888
+enterprise,leftmost_longest,5,1.0,1.0
+enterprise,rightmost_longest,5,1.0,1.0
+enterprise,leftmost_shortest,11,0.7051,0.7051

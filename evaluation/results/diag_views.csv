@@ -1,0 +1,8 @@
+log,group,views,lengths,views_per_length,distinct_activity_sets
+hospital_billing,D,9,5,1.8,3
+hospital_billing,K,12,10,1.2,6
+hospital_billing,L,65,21,3.1,29
+hospital_billing,M,55,11,5.0,37
+road_traffic,A,28,12,2.33,5
+road_traffic,C,5,3,1.67,5
+road_traffic,M,11,7,1.57,7

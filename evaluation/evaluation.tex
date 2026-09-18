@@ -1,0 +1,186 @@
+% =====================================================================
+% SUPERSEDED -- DO NOT EDIT, DO NOT COPY INTO THE PAPER.
+%
+% The live evaluation section is
+%   paper_final/ICPM_2026__Translucent_Variants(4)/sections/05_eval.tex
+% This file is an older draft, kept only for reference.  Three diverging
+% copies of this section are how the submitted PDF ended up quoting
+% numbers from one run while its tables came from another; edit the live
+% copy and regenerate the tables with
+%   run_evaluation.py --full --paper-out <project>/tables
+% =====================================================================
+% Evaluation section -- LaTeX fragment, no preamble.
+% Paper preamble must provide: amsmath, amssymb, graphicx, booktabs, subcaption
+%   and: \graphicspath{{evaluation/}{evaluation/figures/}}
+% Compact version: 1 figure + 4 tables, ~3.5 pages.  No RQ tags; limitations
+% folded into the close.  Result numbers are written into the prose.
+%
+% Regenerate figures + tables:  python evaluation/run_evaluation.py --full
+%                               python figures/make_servicedesk_petrinets.py
+% The harness still runs all 12 logs; the tables below are filtered to the nine
+% kept logs (KEEP_LOGS in evaluation/run_evaluation.py).
+%
+% \cite keys (all in the paper's mybib.bib):
+%   DBLP:conf/bpm/BeyelA24 DBLP:journals/tkde/GrecoGPS06
+%   DBLP:journals/is/Garcia-BanuelosDRWE14 DBLP:conf/bpm/SongGA08
+%   DBLP:conf/sdm/BoseA09 DBLP:conf/bpm/KoninckBW18 DBLP:conf/icml/LeM14
+%   DBLP:journals/simpa/BertiZS23
+%   ROUSSEEUW198753 Adriansyah2014
+%   DBLP:books/sp/CarmonaDSW18 DBLP:conf/rcis/BeyelA24 DBLP:conf/caise/BeyelSA25
+%   DBLP:conf/ecai/BeyelMA24
+%
+% --- AUTOGEN NUMBERS -- refresh from evaluation/results/*.tex after a --full run
+%   (all filtered to the nine kept logs):
+%   Table 1 <- logs_overview_table.tex   Table 2 <- summary_partition_table.tex
+%   Table 3 <- summary_quality_table.tex Table 4 <- case_study_table.tex
+%   recovery prose: global 1 grp / ARI 0 / incoh 1.24; kappa 3.8 / 1.00 / 1.00;
+%     variant 325 & 368 grp / ARI 0.25 & 0.31; CF/EN/D2V clustering ARI <= 0.53
+%     (<= 0.65 auto); attr clean 1.00.
+%   quality prose: fitness == 1.00; precision kappa 0.97 / global 0.94 / variant 0.98;
+%     tr.fit kappa 0.98 / global 0.89 / variant 0.86; tr.F1 kappa 0.99 / 0.94 / 0.92;
+%     kappa 3.8 models, variant ~325.
+%   case prose: kappa ARI 1.00 -> 0.31 -> 0.08 at p=0/.1/.2; views 4 -> 412 -> 659;
+%     tr.F1 1.00 -> 0.95 -> 0.94; CF/CTX-TC ARI ~0.6-0.85 flat; attr clean 1.00 flat.
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+We evaluate the relationship-induced abstraction $\kappa$ (\Cref{def:relationship-induced-process-views}) in three steps that mirror the three claims of \Cref{sec:introduction}: whether $\kappa$ \emph{recovers} the hidden view-defining context, whether its per-view models are \emph{better} than global discovery, trace clustering, and variant discovery, and how it behaves in a realistic \emph{case study} where the recorded enabled activities carry noise.
+All experiments use synthetic translucent event logs, so the hidden context is known and recovery can be measured exactly; reported numbers are means over three random seeds.
+Our implementation and the evaluation pipeline are publicly available,\footnote{\url{https://github.com/hherbertb/translucent-process-views}} implemented in Python with PM4Py~\cite{DBLP:journals/simpa/BertiZS23}.
+
+\subsection{Experimental Setup}
+\label{subsec:eval-setup}
+
+\paragraph{Synthetic logs.}
+Each generator fixes one control-flow skeleton over a small activity alphabet --- a spine of activities with a few \emph{flexible blocks} (a set of choices, an optional step) --- and a \emph{hidden label} that sets how each block behaves: a block of choices is resolved concurrently, in a fixed order, or is pinned to one branch; and an optional step is present or absent.
+To generate a case we draw one hidden label and emit a random trace consistent with it, recording at every event both the executed activity and the set of activities that were selectable (its enabled set); the label is then removed, so it survives only in the pattern of enabled sets, which is what $\kappa$ reads.
+Each generator is tuned so that all variants of one hidden label collapse onto a \emph{single} $\kappa$ identifier while different labels get different identifiers.
+\Cref{tab:eval-logs} lists the nine logs; each isolates one phenomenon, stated in its group header.
+The \emph{$k$-view} family is the controlled sweep --- one base process in two to five configurations --- and varies the ground-truth $k$; each of the other five logs adds one axis $k$-view does not exercise.
+\emph{Running example} is the running example $L_{\mathrm{run}}$ of \Cref{sec:preliminaries}, at log scale: the same eight activities, the same open / two binary choices / submit / decide skeleton, and the same three hidden resolutions of those two choices --- concurrent, sequential, or pinned to one branch --- that \Cref{fig:GUI-intro} draws as three sets of enabled buttons; only the number of cases grows, from six to $1500$.
+It is the one log whose expected answer is written down in the paper: $\kappa$ must return exactly the three identifiers $C_1$--$C_3$ of \Cref{def:relationship-induced-process-views}, and nothing else.
+\emph{Parallel choices} keeps the executed sequences identical across labels, so only the enabled sets can separate them and control-flow clustering cannot succeed even in principle; \emph{enterprise} scales the setting to ${\sim}20$ activities and five roles; \emph{role split} is the minimal clean case (six classical variants) and the only log where a hidden label skips activities entirely; and \emph{rework loop} has no hidden context at all --- the honest failure, where $\kappa$ over-segments an unbounded loop.
+The column \textbf{hidden $k$} is the number of distinct hidden labels the generator used (``--'' when there is no hidden context) and \textbf{$\kappa$ views} is the number of equivalence classes $\kappa$ induces; the two coincide on every log with a hidden context and diverge only for \emph{rework loop}, which has none and where $\kappa$ unrolls the loop into four length-indexed views.
+
+\begin{table}[t]
+  \centering
+  \caption{The nine synthetic logs and the phenomenon each isolates (group headers).
+  Right of the rule is a result: $\kappa$ produces exactly hidden-$k$ views on every log except the rework loop.}
+  \label{tab:eval-logs}
+  \small\setlength{\tabcolsep}{3pt}
+  \input{evaluation/results/logs_overview_table}
+\end{table}
+
+\paragraph{Baselines.}
+We compare $\kappa$ with eight alternatives.
+\emph{Global} discovery mines one model from the whole log with the translucent Inductive Miner (IMtf)~\cite{DBLP:conf/bpm/BeyelA24}.
+\emph{Variant discovery} groups traces by their executed projection~\cite{DBLP:journals/tkde/GrecoGPS06,DBLP:journals/is/Garcia-BanuelosDRWE14}, and \emph{translucent-variant grouping} refines this to one group per distinct translucent trace.
+\emph{Control-flow trace clustering} (CF-TC)~\cite{DBLP:conf/bpm/SongGA08} clusters activity-count and directly-follows features with $k$-means and Ward linkage; \emph{context-aware} clustering (CTX-TC)~\cite{DBLP:conf/sdm/BoseA09} adds enabled-activity features and \emph{enabled-only} clustering (EN-TC) uses those alone.
+\emph{Representation-learning} clustering (D2V-TC)~\cite{DBLP:conf/bpm/KoninckBW18} embeds each trace with Doc2Vec~\cite{DBLP:conf/icml/LeM14}, and \emph{attribute} clustering (ATTR-TC) clusters on recorded case attributes: four \emph{clean} ones that carry information about the hidden label --- \texttt{role} has normalized mutual information $1.00$ with it, \texttt{department} $0.55$, \texttt{location} $0.47$, \texttt{seniority} $0.19$ --- and six \emph{noisy} ones independent of it (all $\le 0.003$).
+The tables list the $k$-means and Ward variants of CF-TC and the clean / noisy / all variants of ATTR-TC separately, each run with $k$ set to the ground-truth number of views (GT) and with $k$ chosen by the silhouette~\cite{ROUSSEEUW198753} (auto).
+
+\paragraph{Metrics.}
+Each partition is compared with the hidden-label partition by the adjusted Rand index (ARI), normalized mutual information (NMI), and purity; all three lie in $[0,1]$ and are $1$ for a perfect match.
+\emph{Enabled-signature incoherence} is the mean number of distinct per-position enabled-set sequences per (group, classical variant) pair; it is $1$ iff no group mixes availability contexts.
+For \emph{model quality} we discover one model per group with IMtf and score it on its own sub-log: fitness (alignments~\cite{Adriansyah2014}), precision (alignment-based~\cite{DBLP:books/sp/CarmonaDSW18}), generalisation, simplicity (net size), and the enabled-set-aware translucent fitness / precision~\cite{DBLP:conf/rcis/BeyelA24,DBLP:conf/caise/BeyelSA25}; F1 is the harmonic mean of fitness and precision.
+Because several models are discovered per log, the per-log score is the case-frequency-weighted mean over the groups and the reported value is the unweighted mean over the nine logs.
+
+\subsection{Recovering Hidden Context}
+\label{subsec:eval-recovery}
+
+\Cref{tab:eval-recovery} reports, for every grouping and given the ground-truth $k$, whether its groups are the right ones.
+Global discovery yields one group and recovers nothing; variant and translucent-variant grouping produce $325$ and $368$ groups for a hidden $k$ of at most five, and their groups still mix $1.24$ enabled-activity signatures per (group, variant) against $1.00$ for $\kappa$.
+Given $k=\mathrm{GT}$, the control-flow, context-aware, enabled-only, and Doc2Vec baselines reach ARI $\le 0.53$ (and $\le 0.65$ with $k$ by silhouette), whereas $\kappa$ reaches ARI, NMI, and purity of $1.00$ with no cluster count, distance function, threshold, or clustering algorithm.
+On the running example this is the paper's own answer: the three identifiers $\kappa$ induces are $C_1$--$C_3$ verbatim, one per hidden resolution, at ARI $1.00$ and $500$ cases each.
+The only baseline that matches $\kappa$ is attribute clustering on the clean attributes (ARI $1.00$) --- and only because \texttt{role} was recorded and $k$ was supplied; on the noisy attributes it is at chance.
+
+\begin{table}[t]
+  \centering
+  \caption{Recovering the hidden context: ARI / NMI / purity against the hidden label, and enabled-signature incoherence, for every grouping. \emph{GT} / \emph{auto} $=$ $k$ set to the true view count / chosen by silhouette. Mean over the nine logs and three seeds; the best value in each column is in \textbf{bold}.}
+  \label{tab:eval-recovery}
+  \footnotesize\setlength{\tabcolsep}{5pt}
+  \input{evaluation/results/summary_partition_table}
+\end{table}
+
+\subsection{Model Quality}
+\label{subsec:eval-quality}
+
+\Cref{tab:eval-quality} compares the per-group models on all eight metrics.
+Fitness is $1.00$ for every approach, because each model is discovered from and scored on the same sub-log, so the classic axes reduce to precision and F1.
+Among the approaches that use neither a recorded attribute nor $k$, $\kappa$ is the most precise (precision $0.97$, F1 $0.98$) at $3.8$ models; variant discovery matches it on classic precision ($0.98$) only by discovering one trivial model per variant --- about $325$ of them --- which gives it the best simplicity ($0.99$) and the worst generalisation ($0.77$, versus $\approx0.94$ for $\kappa$ and the clustering baselines).
+The enabled-set-aware measures separate the approaches: $\kappa$ reaches translucent fitness $0.98$ and translucent F1 $0.99$, the best of all approaches, whereas the single global model admits enabled behaviour that no hidden view exhibits ($0.89$ / $0.94$) and variant discovery scores $0.86$ / $0.92$ despite its trivial classic precision.
+$\kappa$'s per-view models are thus the most faithful to the enabled behaviour, at an order of magnitude fewer models than variant discovery.
+
+\begin{table*}[t]
+  \centering
+  \caption{Model quality per approach, mean over the nine logs. \emph{\#mdl}\ $=$ mean number of models; \emph{fit.}\ $=$ fitness (always $1.00$); \emph{gen.}\ $=$ generalisation; \emph{simp.}\ $=$ simplicity; \emph{tr.}\ $=$ translucent. The best value in each column is in \textbf{bold} (\emph{\#mdl}\ and \emph{fit.}\ excepted).}
+  \label{tab:eval-quality}
+  \footnotesize\setlength{\tabcolsep}{4pt}
+  \resizebox{\textwidth}{!}{\input{evaluation/results/summary_quality_table}}
+\end{table*}
+
+\subsection{Case Study: Sensitivity to Noise}
+\label{subsec:eval-case}
+
+\paragraph{Setup.}
+We model an IT service-desk desktop application.
+The base workflow is $\texttt{open} \to$ a \emph{triage} block $\{\texttt{categorize}, \texttt{set\_priority}\} \to$ a \emph{diagnosis} block $\{\texttt{check\_kb}, \texttt{run\_diag}, \texttt{remote}\} \to$ an \emph{action} $\mathrm{xor}(\texttt{apply\_fix}, \texttt{request\_info})$ with a gated $\texttt{escalate}$ or $\texttt{approve}$ $\to$ a \emph{close} $\mathrm{xor}(\texttt{resolve}, \texttt{close\_noaction}, \texttt{force\_close}) \to \texttt{log\_time}, \texttt{notify}$.
+The hidden context is the operator's role: an \emph{agent} runs triage sequentially, uses one diagnosis step, and can only resolve; a \emph{senior} runs triage and a three-way diagnosis in parallel and may escalate; a \emph{specialist} skips triage and close entirely; a \emph{supervisor} runs triage in parallel and has \texttt{approve} and \texttt{force\_close} on screen.
+The enabled activities are read off screenshots~\cite{DBLP:conf/ecai/BeyelMA24}, so they carry noise: with probability $p$, one enabled activity per event is added or dropped (the executed activity is never touched).
+We generate $1000$ cases, balanced over the four roles, at $p\in\{0,0.05,0.1,0.15,0.2\}$ with three seeds.
+
+\begin{figure*}[t]
+  \centering
+  \begin{subfigure}{\textwidth}
+    \centering\includegraphics[width=\textwidth]{servicedesk_dejure}
+    \caption{The designed (de-jure) service-desk workflow --- the union of what all four roles can do --- annotated with how each role restricts the triage, diagnosis, action, and close blocks.}
+  \end{subfigure}\\[4pt]
+  \begin{subfigure}{\textwidth}
+    \centering\includegraphics[width=0.86\textwidth]{servicedesk_global}
+    \caption{One model mined from the whole log (roles conflated).}
+  \end{subfigure}\\[4pt]
+  \begin{subfigure}{0.49\textwidth}
+    \centering\includegraphics[width=\linewidth]{servicedesk_kappa_agent}
+    \caption{$\kappa$ view --- agent.}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\textwidth}
+    \centering\includegraphics[width=\linewidth]{servicedesk_kappa_senior}
+    \caption{$\kappa$ view --- senior.}
+  \end{subfigure}\\[4pt]
+  \begin{subfigure}{0.49\textwidth}
+    \centering\includegraphics[width=\linewidth]{servicedesk_kappa_specialist}
+    \caption{$\kappa$ view --- specialist.}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.49\textwidth}
+    \centering\includegraphics[width=\linewidth]{servicedesk_kappa_supervisor}
+    \caption{$\kappa$ view --- supervisor.}
+  \end{subfigure}
+  \caption{Service-desk workflow at $p=0$: (a) the designed (de-jure) model, the union of all four roles; (b) one model mined over the whole log; (c--f) the four models $\kappa$ induces, one per hidden role.
+  Places are circles, transitions are boxes, silent transitions are filled.}
+  \label{fig:eval-scenario-models}
+\end{figure*}
+
+\Cref{fig:eval-scenario-models}(a) is the de-jure model: the four roles share one skeleton and differ only in how each block is constrained --- an agent runs triage in sequence and can only \texttt{resolve}, a senior and a supervisor run triage in parallel, a specialist drops triage and close, and only a supervisor sees \texttt{approve} and \texttt{force\_close}.
+The rest of \Cref{fig:eval-scenario-models} contrasts one global model with the four models $\kappa$ induces at $p=0$.
+The global model is visibly loose --- it makes triage optional, turns diagnosis into a three-way parallel block with skips, and merges the action and close steps into one seven-way choice with a loop back --- whereas each of $\kappa$'s models matches one role exactly: the agent model is a plain sequence, the senior model runs triage and a wide diagnosis block in parallel and offers \texttt{escalate}, the specialist model has neither a triage nor a close step, and only the supervisor model has \texttt{approve} and \texttt{force\_close}.
+
+\begin{table*}[t]
+  \centering
+  \caption{Service-desk case study: ARI and translucent F1 for every approach at each enabled-set noise level $p$ (mean over three seeds); the best value in each column is in \textbf{bold}.}
+  \label{tab:eval-case}
+  \scriptsize\setlength{\tabcolsep}{3pt}
+  \resizebox{\textwidth}{!}{\input{evaluation/results/case_study_table}}
+\end{table*}
+
+\Cref{tab:eval-case} shows the effect of noise.
+At $p=0$, $\kappa$ recovers all four roles exactly (ARI $1.00$, four views); as $p$ rises its ARI falls to $0.31$ and $0.08$ and its view count grows from $4$ to $412$ and $659$, because each corrupted trace becomes its own view.
+The control-flow baselines behave oppositely: their partition is read from the executed activities, which noise never touches, so their ARI stays around $0.6$--$0.85$ across all noise levels --- and never recovers the roles, which differ mainly in availability, not execution.
+Attribute clustering on the clean attributes stays at ARI $1.00$ throughout, since \texttt{role} is unaffected by enabled-set noise --- again, only because it was recorded and $k$ was supplied.
+$\kappa$'s translucent F1 nevertheless stays high ($1.00$ then ${\approx}0.94$) as its ARI collapses: each noise fragment is tiny and still modelled faithfully; what degrades is the grouping, not the per-group models.
+
+\paragraph{Limitations.}
+The synthetic logs give $\kappa$ a clean hidden context and thus its best case; real contexts overlap and drift.
+$\kappa$ depends entirely on the fidelity of the enabled sets, as the case study shows, and reaches parity with attribute slicing once the context is recorded and $k$ is known.
+It has no loop operator and over-segments unbounded rework (the \emph{rework loop} log: four views for zero hidden contexts), all models use a single miner (IMtf), and a few very loose sub-models fall back to token-based replay and earn no translucent-quality credit.
+Overall, $\kappa$ recovers hidden availability context exactly and parameter-free when the enabled sets are trustworthy, and its per-view models are the most faithful to the enabled behaviour; its reliance on that single signal is also its main weakness.
