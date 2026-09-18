@@ -135,19 +135,3 @@ aggregation code. `verify_independent.py` re-implements the abstraction function
 | `tpv/quality` | fitness, precision and their translucent counterparts |
 | `evaluation` | experiment runners, baselines, metrics, verification scripts, result CSVs |
 | `app` | small Streamlit GUI for inspecting views |
-| `figures` | scripts that generate the figures in the paper |
-
-## Publications
-
-> **Harry H. Beyel, Wil M. P. van der Aalst**. *Discovering Hidden Process Views from Translucent
-> Event Logs*. Under submission.
-
-This work builds on translucent event logs and translucent process discovery:
-
-> **Harry H. Beyel, Wil M. P. van der Aalst**. (2022). *Creating Translucent Event Logs to Improve
-> Process Discovery*. ICPM Workshops, pp. 435--447.
-> [DOI](https://doi.org/10.1007/978-3-031-27815-0_32)
-
-> **Harry H. Beyel, Wil M. P. van der Aalst**. (2024). *Improving Process Discovery Using
-> Translucent Activity Relationships*. Business Process Management, pp. 146--163.
-> [DOI](https://doi.org/10.1007/978-3-031-70396-6_9)
