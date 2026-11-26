@@ -5,8 +5,8 @@ from . import p2p, p2p_shared
 
 _MODULES = [p2p, p2p_shared]
 try:  # noqa: SIM105
-    from . import o2c
-    _MODULES.append(o2c)
+    from . import o2c, o2c_shared
+    _MODULES += [o2c, o2c_shared]
 except ImportError:
     pass
 try:  # noqa: SIM105

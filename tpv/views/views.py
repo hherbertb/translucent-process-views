@@ -52,16 +52,23 @@ class ProcessView:
         return self.frequency / total_cases if total_cases else 0.0
 
 
-def induce_views(log: TranslucentLog) -> List[ProcessView]:
+def induce_views(log: TranslucentLog, loops: bool | str = False) -> List[ProcessView]:
     """Set of relationship-induced process views ``C_kappa(L)`` -- Definition 4.11.
 
     Partitions the trace set ``Sigma_L`` by equality of the abstraction identifier
     ``kappa``; returns views ordered by case frequency (descending), then by
     canonical identifier string.
+
+    ``loops`` is passed to :func:`tpv.views.abstraction.kappa`: with
+    ``"strict"`` or ``"enabled"`` the identifiers fold repetition into ``loop``
+    (Definition 4.15) instead of unrolling it, so a log whose only variation is
+    how often a rework loop ran induces a constant number of views.  The
+    default ``False`` is Definition 4.10 and leaves every reported number
+    unchanged.
     """
     groups: "OrderedDict[str, Tuple[Identifier, List[TranslucentTrace], int]]" = OrderedDict()
     for order, trace in enumerate(log.trace_set()):
-        ident = kappa(trace)
+        ident = kappa(trace, loops=loops)
         bucket = groups.get(ident.canonical_str())
         if bucket is None:
             groups[ident.canonical_str()] = (ident, [trace], order)

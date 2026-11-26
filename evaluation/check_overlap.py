@@ -13,6 +13,17 @@ table.  Run it *before* a generation run at scale.
 
     python evaluation/check_overlap.py <events.csv> [--label role] [--unit segment]
 
+The gate is a *count* of contested traces, not a fraction.  The fraction is
+what the two public logs are described by (>= 99 %), but it is the wrong bar
+for a generated log: in Odoo most steps are legitimately role-private, so the
+fraction stays at 7-11 % however the scenario is written, while the statistic
+that actually has to hold still -- the ARI restricted to the contested traces
+-- depends on how many contested traces there are.  Measured across three runs
+of ``p2p_shared``, 8 contested traces gave a baseline ARI of -0.149, 16 gave
+0.200 and 24 gave -0.038: the same quantity, moving by half its range.  So the
+gate asks for enough contested traces to estimate anything, and reports the
+fraction without gating on it.
+
 ``--unit case``     one trace per case, label = the case's (single) label
 ``--unit segment``  split each case into maximal runs of consecutive events by
                     one label value; one trace per run.  Use this when the
@@ -69,8 +80,10 @@ def main() -> int:
     p.add_argument("--activity", default="activity")
     p.add_argument("--order", default="seq")
     p.add_argument("--unit", choices=("case", "segment"), default="segment")
-    p.add_argument("--min-shared", type=float, default=0.5,
-                   help="required fraction of traces in a shared variant")
+    p.add_argument("--min-contested", type=int, default=100,
+                   help="traces in a shared executed sequence needed to PASS")
+    p.add_argument("--warn-contested", type=int, default=30,
+                   help="below --min-contested but at or above this: THIN")
     a = p.parse_args()
 
     df = pd.read_csv(a.events)
@@ -118,14 +131,25 @@ def main() -> int:
         for act, labs in sorted(shared_acts.items(), key=lambda kv: -len(kv[1]))[:12]:
             print(f"     {act:<30} {sorted(labs)}")
 
-    ok = frac >= a.min_shared
-    print(f"\n  VERDICT: {'PASS' if ok else 'FAIL'} -- "
-          f"{frac:.1%} of traces sit in a shared executed sequence "
-          f"(need >= {a.min_shared:.0%}).")
-    if not ok:
+    if n_shared >= a.min_contested:
+        verdict, rc = "PASS", 0
+    elif n_shared >= a.warn_contested:
+        verdict, rc = "THIN", 0
+    else:
+        verdict, rc = "FAIL", 1
+    print(f"\n  VERDICT: {verdict} -- {n_shared} traces sit in a shared executed "
+          f"sequence ({frac:.1%} of {len(traces)}); PASS needs >= {a.min_contested}, "
+          f"THIN >= {a.warn_contested}.")
+    if verdict == "THIN":
+        print("  Enough to see an effect, not enough to report a number: the ARI on\n"
+              "  the contested traces alone will move by a large fraction of its\n"
+              "  range between seeds.  Scale the run up before quoting it.")
+    if verdict == "FAIL":
         print("  The executed activities already determine the context, so this log\n"
-              "  cannot show that the enabled activities add anything.")
-    return 0 if ok else 1
+              "  cannot show that the enabled activities add anything.  Either the\n"
+              "  roles need overlapping work, or the overlap needs to be placed\n"
+              "  where their access rights differ.")
+    return rc
 
 
 if __name__ == "__main__":

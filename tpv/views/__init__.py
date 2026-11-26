@@ -1,6 +1,6 @@
 from tpv.views import abstraction, identifier
 from tpv.views.abstraction import kappa
-from tpv.views.identifier import Act, And, Empty, Identifier, Seq, Xor
+from tpv.views.identifier import Act, And, Empty, Identifier, Loop, Seq, Xor
 from tpv.views.views import (
     ProcessView,
     assign_view,
@@ -17,6 +17,7 @@ __all__ = [
     "Act",
     "Seq",
     "Xor",
+    "Loop",
     "And",
     "ProcessView",
     "induce_views",

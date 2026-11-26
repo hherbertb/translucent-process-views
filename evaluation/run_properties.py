@@ -132,10 +132,20 @@ def experiment_determinism(seeds=(0, 1, 2, 3, 4)) -> pd.DataFrame:
 def experiment_loop_penalty(max_reworks=(0, 1, 2, 3, 4, 5, 6, 8, 10)) -> pd.DataFrame:
     """View count vs. how many times the loop may repeat.
 
-    K has no loop operator (Section 4.1), so repetition is unrolled and each
-    distinct repeat count becomes its own view.  The paper reports this with a
-    single number in the log table; the growth curve is what makes the scope
-    restriction concrete and bounded rather than merely admitted.
+    Definition 4.1 as published has no loop operator, so repetition is unrolled
+    and each distinct repeat count becomes its own view.  The ``loop`` extension
+    (Definition 4.15) folds it back, in two readings:
+
+    ``strict``  folds a block pattern executed at least twice, so "body once"
+                and "body two or more times" stay apart: three views, whatever
+                the loop bound.
+    ``enabled`` also folds a single execution that the enabled activities show
+                could have repeated, which is the translucent reading: two
+                views -- loop taken, loop not taken -- whatever the loop bound.
+
+    The columns are what makes the scope restriction, and its repair, concrete:
+    plain ``kappa`` tracks the number of distinct trace lengths exactly, both
+    folded variants are constant.
     """
     rows = []
     for mr in max_reworks:
@@ -144,6 +154,8 @@ def experiment_loop_penalty(max_reworks=(0, 1, 2, 3, 4, 5, 6, 8, 10)) -> pd.Data
         rows.append({
             "max_rework": mr,
             "n_views": len(induce_views(log)),
+            "n_views_loop_strict": len(induce_views(log, loops="strict")),
+            "n_views_loop_enabled": len(induce_views(log, loops="enabled")),
             "n_translucent_variants": len(log.trace_set()),
             "n_classical_variants": len(log.classical_variants()),
             "distinct_trace_lengths": len(lengths),
@@ -246,6 +258,23 @@ def _macros(cost, det, loop, tie) -> str:
         # is the whole content of the "unrolls loops" limitation
         m["loopViewsEqualLengths"] = (
             "yes" if (loop.n_views == loop.distinct_trace_lengths).all() else "no")
+        # the loop extension: constant in the loop bound, which is the claim
+        if "n_views_loop_strict" in loop:
+            m["loopFoldedStrictViews"] = f"{int(loop.n_views_loop_strict.max())}"
+            m["loopFoldedEnabledViews"] = f"{int(loop.n_views_loop_enabled.max())}"
+            # Constancy is claimed from the bound at which each mode can first
+            # fold: "strict" needs the body executed twice, so it cannot be
+            # constant before max_rework 2, and "enabled" needs it once, so not
+            # before 1.  Below that the log simply has fewer behaviours.
+            strict_flat = loop[loop.max_rework >= 2].n_views_loop_strict
+            enabled_flat = loop[loop.max_rework >= 1].n_views_loop_enabled
+            m["loopFoldedStrictConstant"] = "yes" if strict_flat.nunique() == 1 else "no"
+            m["loopFoldedEnabledConstant"] = "yes" if enabled_flat.nunique() == 1 else "no"
+            # where unrolling starts to cost: first bound at which the folded
+            # count is below the unrolled one
+            diff = loop[loop.n_views > loop.n_views_loop_enabled]
+            if not diff.empty:
+                m["loopFoldedDivergesAt"] = f"{int(diff.max_rework.min())}"
 
     if not tie.empty:
         alt = tie[tie.decomposition != "leftmost_longest"]
@@ -281,10 +310,12 @@ def run(out: Path = DEF_OUT, paper_out: "Path | None" = None) -> dict:
     (out / "loop_penalty_table.tex").write_text(
         loop.rename(columns={
             "max_rework": "max.\\ rework", "n_views": "$\\kappa$ views",
+            "n_views_loop_strict": "$\\kappa_{\\mathit{loop}}$ str.",
+            "n_views_loop_enabled": "$\\kappa_{\\mathit{loop}}$ en.",
             "n_translucent_variants": "tr.\\ var.",
             "n_classical_variants": "cl.\\ var.",
             "distinct_trace_lengths": "distinct lengths",
-        }).to_latex(index=False, escape=False, column_format="rrrrr"),
+        }).to_latex(index=False, escape=False, column_format="r" * len(loop.columns)),
         encoding="utf-8")
 
     if paper_out is not None:
