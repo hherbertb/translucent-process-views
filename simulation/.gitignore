@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+*.pyc
+output/
+# downloaded by `python -m sim.fetch_addons` at a pinned commit; third-party (OCA, AGPL-3)
+addons/

@@ -1,0 +1,62 @@
+# Odoo Community 17.0 + PostgreSQL + nginx for the translucent-log simulation.
+# All images are free and pinned by digest so a later `docker compose up`
+# gets the same bits. Odoo runs with several worker processes (it uses more
+# than one CPU core); nginx routes the web client's websocket to Odoo's
+# evented port, as in Odoo's standard deployment.
+name: translucent-sim
+
+services:
+  db:
+    image: postgres:16.4-alpine@sha256:5660c2cbfea50c7a9127d17dc4e48543eedd3d7a41a595a2dfa572471e37e64c
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+    volumes:
+      - sim-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo -d postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  odoo:
+    image: odoo:17.0@sha256:8779f8157ddcc37b84014c94646073f46fd4ad776b7a5d95fc3b0dc73a24a8fa
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+    # no host port: reached through the proxy service below
+    command:
+      - "--db-filter=^odoo_sim$$"
+      - "--without-demo=all"
+      - "--workers=6"
+      - "--max-cron-threads=1"
+      - "--proxy-mode"
+      - "--gevent-port=8072"
+      - "--limit-time-real=1800"
+      - "--limit-time-cpu=1800"
+      - "--limit-memory-soft=1610612736"
+      - "--limit-memory-hard=2147483648"
+    volumes:
+      - sim-odoo-data:/var/lib/odoo
+      # third-party addons fetched by `python -m sim.fetch_addons` (OCA helpdesk_mgmt)
+      - ./addons:/mnt/extra-addons:ro
+
+  proxy:
+    image: nginx:1.27.2-alpine@sha256:74175cf34632e88c6cfe206897cbfe2d2fecf9bf033c40e7f9775a3689e8adc7
+    depends_on:
+      - odoo
+    # Local-only bind. Change the left-hand port if 8069 is taken
+    # (and pass --url to the simulation commands).
+    ports:
+      - "127.0.0.1:8069:8069"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+
+volumes:
+  sim-db:
+  sim-odoo-data:

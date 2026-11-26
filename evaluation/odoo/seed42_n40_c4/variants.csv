@@ -1,0 +1,41 @@
+case_id,length,variant
+PR0001,9,Create RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment > Validate Receipt
+PR0002,8,Create RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0003,10,Create RFQ > Change Order > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0004,14,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Set Received Quantity > Validate Receipt > Create Backorder > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0005,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0006,13,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Set Received Quantity > Validate Receipt > Create Backorder > Create Bill > Complete Bill > Confirm Bill > Validate Receipt > Register Payment > Create Payment
+PR0007,6,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Cancel Order
+PR0008,9,Create RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0009,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0010,12,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0011,8,Create RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0012,12,Create RFQ > Compose RFQ Email > Discard Email > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0013,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0014,11,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0015,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0016,13,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Set Received Quantity > Validate Receipt > No Backorder > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0017,13,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Set Received Quantity > Validate Receipt > Create Backorder > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0018,11,Create RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Reset Bill to Draft > Confirm Bill > Register Payment > Create Payment > Validate Receipt
+PR0019,13,Create RFQ > Confirm Order > Cancel Order > Set Order to Draft > Change Order > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0020,9,Create RFQ > Confirm Order > Validate Receipt > Create Bill > Confirm Bill (rejected) > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0021,9,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0022,13,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Discard Payment > Register Payment > Create Payment
+PR0023,14,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment > Set Received Quantity > Validate Receipt > Create Backorder > Validate Receipt
+PR0024,13,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Set Received Quantity > Validate Receipt > No Backorder > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0025,10,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill
+PR0026,14,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Reset Bill to Draft > Confirm Bill > Register Payment > Create Payment > Lock Order
+PR0027,14,Create RFQ > Change Order > Confirm Order > Approve Order > Validate Receipt > Create Bill > Confirm Bill (rejected) > Complete Bill > Confirm Bill > Register Payment > Discard Payment > Register Payment > Create Payment > Lock Order
+PR0028,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Create Bill > Complete Bill > Confirm Bill > Validate Receipt > Register Payment > Create Payment
+PR0029,2,Create RFQ > Cancel Order
+PR0030,6,Create RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill
+PR0031,9,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Create Bill > Confirm Bill (rejected) > Complete Bill > Confirm Bill
+PR0032,11,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment > Lock Order
+PR0033,13,Create RFQ > Change Order > Compose RFQ Email > Discard Email > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0034,10,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0035,12,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Confirm Bill (rejected) > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0036,12,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0037,14,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Set Received Quantity > Validate Receipt > Create Backorder > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0038,5,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Cancel Order
+PR0039,14,Create RFQ > Compose RFQ Email > Send RFQ > Confirm Order > Approve Order > Set Received Quantity > Validate Receipt > Create Backorder > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
+PR0040,11,Create RFQ > Change Order > Compose RFQ Email > Send RFQ > Confirm Order > Validate Receipt > Create Bill > Complete Bill > Confirm Bill > Register Payment > Create Payment
