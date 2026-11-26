@@ -33,3 +33,6 @@ paper_eval/
 # numbers the paper reports, and the verification scripts check the tables against
 # them.  The rule below only covers stray CSVs written next to the scripts.
 evaluation/*.csv
+
+# draw.io writes these next to the file it is editing
+figures/.$*.drawio.bkp

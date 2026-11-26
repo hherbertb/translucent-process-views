@@ -1,0 +1,196 @@
+<mxfile host="app.diagrams.net" agent="handmade" version="24.7.17" type="device">
+  <diagram id="hidden-views" name="Figure 1">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="a-title" value="(A) Hidden View 1: independent choices" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="440" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="a-window" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="440" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="a-bar" value="" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="72" width="440" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a-url" value="request/1042" style="text;html=1;fontSize=11;fontColor=#8a9099;align=center;" vertex="1" parent="1">
+          <mxGeometry x="150" y="80" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="a-app" value="Request Handling System" style="text;html=1;fontSize=15;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="118" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="a-user" value="M" style="ellipse;whiteSpace=wrap;html=1;fillColor=#2f6fdb;strokeColor=none;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="438" y="118" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="a-card" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dfe3ea;" vertex="1" parent="1">
+          <mxGeometry x="60" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="a-card-t" value="&lt;b&gt;Request #1042&lt;/b&gt;&lt;br&gt;Type: Purchase Request&lt;br&gt;Amount: 12,000 EUR&lt;br&gt;Status: In Review" style="text;html=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="60" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="a-actions" value="ACTIONS" style="text;html=1;fontSize=10;fontStyle=1;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="258" width="120" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="✓  Open request (o)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d6f0dd;strokeColor=#59a06f;fontColor=#1d5c33;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Budget check (b)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Compliance check (c)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="Manager assessment (d)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="Legal assessment (e)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="Submit request (f)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="Approve (g)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="60" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a8" value="Reject (h)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="270" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="a-note" value="Choice b/c and choice d/e are independent." style="text;html=1;fontSize=10;fontStyle=2;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="60" y="458" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="b-title" value="(B) Hidden View 2: sequential choices" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="520" y="40" width="440" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="b-window" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="72" width="440" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="b-bar" value="" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="72" width="440" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b-url" value="request/1042" style="text;html=1;fontSize=11;fontColor=#8a9099;align=center;" vertex="1" parent="1">
+          <mxGeometry x="630" y="80" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="b-app" value="Request Handling System" style="text;html=1;fontSize=15;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="540" y="118" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="b-user" value="James Bond" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=#2f6fdb;strokeColor=none;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="866" y="118" width="76" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="b-card" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dfe3ea;" vertex="1" parent="1">
+          <mxGeometry x="540" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="b-card-t" value="&lt;b&gt;Request #1042&lt;/b&gt;&lt;br&gt;Type: Purchase Request&lt;br&gt;Amount: 12,000 EUR&lt;br&gt;Status: In Review" style="text;html=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="540" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="b-actions" value="ACTIONS" style="text;html=1;fontSize=10;fontStyle=1;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="540" y="258" width="120" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="✓  Open request (o)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d6f0dd;strokeColor=#59a06f;fontColor=#1d5c33;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="Budget check (b)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="Compliance check (c)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="Manager assessment (d)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b5" value="Legal assessment (e)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b6" value="Submit request (f)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b7" value="Approve (g)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b8" value="Reject (h)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="b-note" value="Choice d/e unlocks only after b/c." style="text;html=1;fontSize=10;fontStyle=2;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="540" y="458" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c-title" value="(C) Hidden View 3: restricted view" style="text;html=1;fontSize=15;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="40" width="440" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c-window" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="72" width="440" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="c-bar" value="" style="rounded=1;arcSize=14;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="72" width="440" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c-url" value="request/1042" style="text;html=1;fontSize=11;fontColor=#8a9099;align=center;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="80" width="220" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="c-app" value="Request Handling System" style="text;html=1;fontSize=15;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="118" width="280" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c-user" value="Moneypenny" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fillColor=#2f6fdb;strokeColor=none;fontColor=#ffffff;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1338" y="118" width="84" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="c-card" value="" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#dfe3ea;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c-card-t" value="&lt;b&gt;Request #1042&lt;/b&gt;&lt;br&gt;Type: Purchase Request&lt;br&gt;Amount: 12,000 EUR&lt;br&gt;Status: In Review" style="text;html=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=10;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="154" width="400" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="c-actions" value="ACTIONS" style="text;html=1;fontSize=10;fontStyle=1;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="258" width="120" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="✓  Open request (o)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d6f0dd;strokeColor=#59a06f;fontColor=#1d5c33;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="Budget check (b)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="280" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="Compliance check (c)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="Manager assessment (d)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="324" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="Legal assessment (e)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="Submit request (f)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="368" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="Approve (g)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="Reject (h)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="412" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="c-note" value="No early alternatives are available." style="text;html=1;fontSize=10;fontStyle=2;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1020" y="458" width="400" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="f-window" value="" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#c8ccd4;" vertex="1" parent="1">
+          <mxGeometry x="520" y="580" width="440" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="f-title" value="&lt;b&gt;Final decision state&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#8a9099&quot;&gt;Final choice: appears in all three views.&lt;/font&gt;" style="text;html=1;fontSize=11;align=left;verticalAlign=top;spacingLeft=12;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="520" y="580" width="440" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="Approve (g)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2f6fdb;strokeColor=none;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="650" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="f2" value="Reject (h)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#2f6fdb;strokeColor=none;fontColor=#ffffff;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="750" y="650" width="190" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" value="executed" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#d6f0dd;strokeColor=#59a06f;fontColor=#1d5c33;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="595" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" value="enabled" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#2f6fdb;fontColor=#1b3f7e;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="595" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" value="not available" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fillColor=#f1f3f6;strokeColor=#dfe3ea;fontColor=#a6acb5;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="595" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="l-note" value="The username in the top-right corner is redacted when the log is created, so the view is hidden." style="text;html=1;fontSize=11;fontStyle=2;fontColor=#8a9099;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="640" width="440" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

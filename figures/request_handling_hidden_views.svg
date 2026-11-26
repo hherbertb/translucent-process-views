@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1660 1010" font-family="'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect x="0.0" y="0.0" width="1660.0" height="1010.0" rx="0" ry="0" fill="#FFFFFF"/>
+<text x="20.0" y="84.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:24px;font-weight:600" fill="#1F2937">(A) Hidden View 1: independent choices</text>
+<rect x="18.0" y="108.0" width="532.0" height="664.0" rx="12" ry="12" fill="#FFFFFF" stroke="#D0D5DD" stroke-width="1"/>
+<rect x="19.0" y="109.0" width="530.0" height="38.0" rx="11" ry="11" fill="#F2F4F7"/>
+<rect x="19.0" y="135.0" width="530.0" height="12.0" rx="0" ry="0" fill="#F2F4F7"/>
+<line x1="19.0" y1="146.0" x2="549.0" y2="146.0" stroke="#D0D5DD" stroke-width="1" stroke-linecap="butt"/>
+<circle cx="38.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="56.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="74.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<rect x="102.0" y="116.0" width="432.0" height="22.0" rx="11" ry="11" fill="#E9ECF2"/>
+<text x="115.0" y="132.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15.5px;font-weight:400" fill="#98A2B3">/requests/1042</text>
+<text x="36.0" y="192.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:27px;font-weight:600" fill="#1F2937">Request Handling System</text>
+<rect x="473.7" y="171.0" width="62.3" height="30.0" rx="15.0" ry="15.0" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<circle cx="488.7" cy="186.0" r="11" fill="#6366F1"/>
+<text x="488.7" y="186.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;font-weight:600" fill="#FFFFFF">M</text>
+<text x="506.7" y="186.0" text-anchor="start" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:500" fill="#3730A3">M</text>
+<line x1="32.0" y1="208.0" x2="536.0" y2="208.0" stroke="#E4E7EC" stroke-width="1" stroke-linecap="butt"/>
+<rect x="32.0" y="226.0" width="504.0" height="150.0" rx="10" ry="10" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+<text x="52.0" y="262.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:21px;font-weight:600" fill="#1F2937">Request #1042</text>
+<text x="52.0" y="292.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Type: Purchase Request</text>
+<text x="52.0" y="318.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Amount: 12,000 EUR</text>
+<text x="52.0" y="344.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Status: In Review</text>
+<text x="36.0" y="408.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;font-weight:600;letter-spacing:1.8px" fill="#98A2B3">ACTIONS</text>
+<rect x="32.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#ECFDF3" stroke="#ABEFC6" stroke-width="1"/>
+<line x1="48.5" y1="454.0" x2="51.6" y2="457.9" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<line x1="51.6" y1="457.9" x2="58.6" y2="449.1" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<text x="150.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#067647">Open request (o)</text>
+<rect x="282.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="400.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Budget check (b)</text>
+<rect x="32.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="150.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Compliance check (c)</text>
+<rect x="282.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="400.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Manager review (d)</text>
+<rect x="32.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="150.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Legal review (e)</text>
+<rect x="282.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="400.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Submit request (f)</text>
+<rect x="32.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="150.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Approve (g)</text>
+<rect x="282.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="400.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Reject (h)</text>
+<text x="36.0" y="722.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;font-style:italic" fill="#667085">Choice b/c and choice d/e are independent.</text>
+<text x="568.0" y="84.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:24px;font-weight:600" fill="#1F2937">(B) Hidden View 2: sequential choices</text>
+<rect x="566.0" y="108.0" width="532.0" height="664.0" rx="12" ry="12" fill="#FFFFFF" stroke="#D0D5DD" stroke-width="1"/>
+<rect x="567.0" y="109.0" width="530.0" height="38.0" rx="11" ry="11" fill="#F2F4F7"/>
+<rect x="567.0" y="135.0" width="530.0" height="12.0" rx="0" ry="0" fill="#F2F4F7"/>
+<line x1="567.0" y1="146.0" x2="1097.0" y2="146.0" stroke="#D0D5DD" stroke-width="1" stroke-linecap="butt"/>
+<circle cx="586.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="604.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="622.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<rect x="650.0" y="116.0" width="432.0" height="22.0" rx="11" ry="11" fill="#E9ECF2"/>
+<text x="663.0" y="132.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15.5px;font-weight:400" fill="#98A2B3">/requests/1042</text>
+<text x="584.0" y="192.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:27px;font-weight:600" fill="#1F2937">Request Handling System</text>
+<rect x="946.1" y="171.0" width="137.9" height="30.0" rx="15.0" ry="15.0" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<circle cx="961.1" cy="186.0" r="11" fill="#6366F1"/>
+<text x="961.1" y="186.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;font-weight:600" fill="#FFFFFF">JB</text>
+<text x="979.1" y="186.0" text-anchor="start" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:500" fill="#3730A3">James Bond</text>
+<line x1="580.0" y1="208.0" x2="1084.0" y2="208.0" stroke="#E4E7EC" stroke-width="1" stroke-linecap="butt"/>
+<rect x="580.0" y="226.0" width="504.0" height="150.0" rx="10" ry="10" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+<text x="600.0" y="262.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:21px;font-weight:600" fill="#1F2937">Request #1042</text>
+<text x="600.0" y="292.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Type: Purchase Request</text>
+<text x="600.0" y="318.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Amount: 12,000 EUR</text>
+<text x="600.0" y="344.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Status: In Review</text>
+<text x="584.0" y="408.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;font-weight:600;letter-spacing:1.8px" fill="#98A2B3">ACTIONS</text>
+<rect x="580.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#ECFDF3" stroke="#ABEFC6" stroke-width="1"/>
+<line x1="596.5" y1="454.0" x2="599.6" y2="457.9" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<line x1="599.6" y1="457.9" x2="606.6" y2="449.1" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<text x="698.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#067647">Open request (o)</text>
+<rect x="830.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="948.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Budget check (b)</text>
+<rect x="580.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="698.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Compliance check (c)</text>
+<rect x="830.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="948.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Manager review (d)</text>
+<rect x="580.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="698.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Legal review (e)</text>
+<rect x="830.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="948.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Submit request (f)</text>
+<rect x="580.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="698.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Approve (g)</text>
+<rect x="830.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="948.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Reject (h)</text>
+<text x="584.0" y="722.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;font-style:italic" fill="#667085">Choice d/e unlocks only after b/c.</text>
+<text x="1116.0" y="84.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:24px;font-weight:600" fill="#1F2937">(C) Hidden View 3: restricted view</text>
+<rect x="1114.0" y="108.0" width="532.0" height="664.0" rx="12" ry="12" fill="#FFFFFF" stroke="#D0D5DD" stroke-width="1"/>
+<rect x="1115.0" y="109.0" width="530.0" height="38.0" rx="11" ry="11" fill="#F2F4F7"/>
+<rect x="1115.0" y="135.0" width="530.0" height="12.0" rx="0" ry="0" fill="#F2F4F7"/>
+<line x1="1115.0" y1="146.0" x2="1645.0" y2="146.0" stroke="#D0D5DD" stroke-width="1" stroke-linecap="butt"/>
+<circle cx="1134.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="1152.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<circle cx="1170.0" cy="127.0" r="4.5" fill="#D0D5DD"/>
+<rect x="1198.0" y="116.0" width="432.0" height="22.0" rx="11" ry="11" fill="#E9ECF2"/>
+<text x="1211.0" y="132.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15.5px;font-weight:400" fill="#98A2B3">/requests/1042</text>
+<text x="1132.0" y="192.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:27px;font-weight:600" fill="#1F2937">Request Handling System</text>
+<rect x="1491.4" y="171.0" width="140.6" height="30.0" rx="15.0" ry="15.0" fill="#EEF2FF" stroke="#C7D2FE" stroke-width="1"/>
+<circle cx="1506.4" cy="186.0" r="11" fill="#6366F1"/>
+<text x="1506.4" y="186.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;font-weight:600" fill="#FFFFFF">MP</text>
+<text x="1524.4" y="186.0" text-anchor="start" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:500" fill="#3730A3">Moneypenny</text>
+<line x1="1128.0" y1="208.0" x2="1632.0" y2="208.0" stroke="#E4E7EC" stroke-width="1" stroke-linecap="butt"/>
+<rect x="1128.0" y="226.0" width="504.0" height="150.0" rx="10" ry="10" fill="#F9FAFB" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1148.0" y="262.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:21px;font-weight:600" fill="#1F2937">Request #1042</text>
+<text x="1148.0" y="292.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Type: Purchase Request</text>
+<text x="1148.0" y="318.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Amount: 12,000 EUR</text>
+<text x="1148.0" y="344.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:400" fill="#667085">Status: In Review</text>
+<text x="1132.0" y="408.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:15px;font-weight:600;letter-spacing:1.8px" fill="#98A2B3">ACTIONS</text>
+<rect x="1128.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#ECFDF3" stroke="#ABEFC6" stroke-width="1"/>
+<line x1="1144.5" y1="454.0" x2="1147.7" y2="457.9" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<line x1="1147.7" y1="457.9" x2="1154.7" y2="449.1" stroke="#067647" stroke-width="2" stroke-linecap="round"/>
+<text x="1246.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#067647">Open request (o)</text>
+<rect x="1378.0" y="426.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="1496.0" y="454.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Budget check (b)</text>
+<rect x="1128.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1246.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Compliance check (c)</text>
+<rect x="1378.0" y="496.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1496.0" y="524.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Manager review (d)</text>
+<rect x="1128.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1246.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Legal review (e)</text>
+<rect x="1378.0" y="566.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1496.0" y="594.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Submit request (f)</text>
+<rect x="1128.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1246.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Approve (g)</text>
+<rect x="1378.0" y="636.0" width="236.0" height="56.0" rx="8" ry="8" fill="#F1F3F5" stroke="#E4E7EC" stroke-width="1"/>
+<text x="1496.0" y="664.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#98A2B3">Reject (h)</text>
+<text x="1132.0" y="722.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400;font-style:italic" fill="#667085">No early alternatives are available.</text>
+<rect x="559.0" y="812.0" width="542.0" height="168.0" rx="12" ry="12" fill="#FFFFFF" stroke="#D0D5DD" stroke-width="1"/>
+<text x="585.0" y="850.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:21px;font-weight:600" fill="#1F2937">Final decision state</text>
+<text x="585.0" y="876.0" text-anchor="start" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;font-weight:400" fill="#667085">Final choice — appears in all three views.</text>
+<rect x="587.0" y="898.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="705.0" y="926.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Approve (g)</text>
+<rect x="837.0" y="898.0" width="236.0" height="56.0" rx="8" ry="8" fill="#2563EB"/>
+<text x="955.0" y="926.0" text-anchor="middle" dominant-baseline="central" style="font-family:'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:17.5px;font-weight:500" fill="#FFFFFF">Reject (h)</text>
+</svg>

@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1780 560" font-family="Inter, 'Helvetica Neue', Arial, sans-serif">
+<rect x="0.0" y="0.0" width="1780.0" height="560.0" rx="0" ry="0" fill="#FFFFFF"/>
+<text x="48.0" y="54.0" text-anchor="start" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:22px;font-weight:700" fill="#101828">IT ServiceDesk - base desktop workflow</text>
+<text x="48.0" y="78.0" text-anchor="start" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12.5px;font-weight:400" fill="#475467">Hidden context = the operator's role. Blocks run in parallel (+), in sequence, or are skipped depending on the role.</text>
+<circle cx="56.0" cy="150.0" r="12" fill="#FFFFFF" stroke="#667085" stroke-width="2"/>
+<line x1="78.0" y1="150.0" x2="89.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="96.0,150.0 87.0,145.5 87.0,154.5" fill="#667085"/>
+<rect x="96.0" y="130.0" width="72.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="132.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">open</text>
+<line x1="168.0" y1="150.0" x2="183.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="190.0,150.0 181.0,145.5 181.0,154.5" fill="#667085"/>
+<polygon points="213.0,127.0 236.0,150.0 213.0,173.0 190.0,150.0" fill="#F1F3F5" stroke="#98A2B3" stroke-width="1.4"/>
+<text x="213.0" y="151.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:20px;font-weight:700" fill="#344054">+</text>
+<text x="213.0" y="117.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#475467">triage</text>
+<rect x="246.0" y="130.0" width="190.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="341.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">categorize  -&gt;  set_priority</text>
+<text x="341.0" y="185.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#98A2B3">block</text>
+<line x1="446.0" y1="150.0" x2="459.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="466.0,150.0 457.0,145.5 457.0,154.5" fill="#667085"/>
+<polygon points="489.0,127.0 512.0,150.0 489.0,173.0 466.0,150.0" fill="#F1F3F5" stroke="#98A2B3" stroke-width="1.4"/>
+<text x="489.0" y="151.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:20px;font-weight:700" fill="#344054">+</text>
+<text x="489.0" y="117.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#475467">diagnosis</text>
+<rect x="522.0" y="130.0" width="214.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="629.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">check_kb || run_diag || remote</text>
+<text x="629.0" y="185.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#98A2B3">block</text>
+<line x1="746.0" y1="150.0" x2="759.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="766.0,150.0 757.0,145.5 757.0,154.5" fill="#667085"/>
+<polygon points="789.0,127.0 812.0,150.0 789.0,173.0 766.0,150.0" fill="#F1F3F5" stroke="#98A2B3" stroke-width="1.4"/>
+<text x="789.0" y="151.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:20px;font-weight:700" fill="#344054">×</text>
+<text x="789.0" y="117.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#475467">action</text>
+<rect x="822.0" y="130.0" width="174.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="909.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">apply_fix | request_info</text>
+<text x="909.0" y="185.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#98A2B3">( + escalate / approve )</text>
+<line x1="1006.0" y1="150.0" x2="1019.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="1026.0,150.0 1017.0,145.5 1017.0,154.5" fill="#667085"/>
+<polygon points="1049.0,127.0 1072.0,150.0 1049.0,173.0 1026.0,150.0" fill="#F1F3F5" stroke="#98A2B3" stroke-width="1.4"/>
+<text x="1049.0" y="151.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:20px;font-weight:700" fill="#344054">×</text>
+<text x="1049.0" y="117.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#475467">close</text>
+<rect x="1082.0" y="130.0" width="240.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="1202.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">resolve | close_noaction | force_close</text>
+<text x="1202.0" y="185.0" text-anchor="middle" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:10.5px;font-weight:400" fill="#98A2B3">block</text>
+<line x1="1332.0" y1="150.0" x2="1345.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="1352.0,150.0 1343.0,145.5 1343.0,154.5" fill="#667085"/>
+<rect x="1352.0" y="130.0" width="132.0" height="40.0" rx="9" ry="9" fill="#2563EB"/>
+<text x="1418.0" y="150.0" text-anchor="middle" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:13px;font-weight:600" fill="#FFFFFF">log_time  -&gt;  notify</text>
+<line x1="1484.0" y1="150.0" x2="1495.0" y2="150.0" stroke="#667085" stroke-width="1.6" stroke-linecap="round"/>
+<polygon points="1502.0,150.0 1493.0,145.5 1493.0,154.5" fill="#667085"/>
+<circle cx="1514.0" cy="150.0" r="12" fill="#FFFFFF" stroke="#667085" stroke-width="2"/>
+<circle cx="1514.0" cy="150.0" r="6" fill="#667085"/>
+<text x="48.0" y="286.0" text-anchor="start" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:15px;font-weight:700" fill="#101828">Per-role variation of the base flow</text>
+<rect x="48.0" y="300.0" width="1080.0" height="34.0" rx="6" ry="6" fill="#EEF2FF" stroke="#D0D5DD" stroke-width="1"/>
+<text x="60.0" y="317.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12px;font-weight:700" fill="#101828">Role</text>
+<text x="210.0" y="317.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12px;font-weight:700" fill="#101828">Triage</text>
+<text x="360.0" y="317.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12px;font-weight:700" fill="#101828">Diagnosis</text>
+<text x="610.0" y="317.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12px;font-weight:700" fill="#101828">On screen</text>
+<text x="840.0" y="317.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:12px;font-weight:700" fill="#101828">Close</text>
+<rect x="48.0" y="334.0" width="1080.0" height="34.0" rx="0" ry="0" fill="#FBFCFE" stroke="#E4E7EC" stroke-width="1"/>
+<text x="60.0" y="351.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:600" fill="#101828">L1 agent</text>
+<text x="210.0" y="351.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">sequential</text>
+<text x="360.0" y="351.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">check_kb</text>
+<text x="610.0" y="351.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">—</text>
+<text x="840.0" y="351.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">resolve</text>
+<rect x="48.0" y="368.0" width="1080.0" height="34.0" rx="0" ry="0" fill="#FFFFFF" stroke="#E4E7EC" stroke-width="1"/>
+<text x="60.0" y="385.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:600" fill="#101828">L2 senior</text>
+<text x="210.0" y="385.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">parallel</text>
+<text x="360.0" y="385.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">check_kb || run_diag || remote</text>
+<text x="610.0" y="385.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#067647">escalate</text>
+<text x="840.0" y="385.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">resolve | close_noaction</text>
+<rect x="48.0" y="402.0" width="1080.0" height="34.0" rx="0" ry="0" fill="#FBFCFE" stroke="#E4E7EC" stroke-width="1"/>
+<text x="60.0" y="419.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:600" fill="#101828">L3 specialist</text>
+<text x="210.0" y="419.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#B42318">skipped</text>
+<text x="360.0" y="419.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">run_diag || remote</text>
+<text x="610.0" y="419.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#067647">escalate</text>
+<text x="840.0" y="419.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#B42318">skipped (hand back)</text>
+<rect x="48.0" y="436.0" width="1080.0" height="34.0" rx="0" ry="0" fill="#FFFFFF" stroke="#E4E7EC" stroke-width="1"/>
+<text x="60.0" y="453.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:600" fill="#101828">supervisor</text>
+<text x="210.0" y="453.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">parallel</text>
+<text x="360.0" y="453.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">check_kb</text>
+<text x="610.0" y="453.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#067647">approve, force_close</text>
+<text x="840.0" y="453.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">resolve | close_noaction | force_close</text>
+<rect x="48.0" y="300.0" width="1080.0" height="170.0" rx="6" ry="6" fill="none" stroke="#D0D5DD" stroke-width="1"/>
+<rect x="48.0" y="502.0" width="26.0" height="18.0" rx="5" ry="5" fill="#2563EB"/>
+<text x="82.0" y="514.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">activity / block</text>
+<polygon points="223.0,503.0 234.0,512.0 223.0,521.0 212.0,512.0" fill="#F1F3F5" stroke="#98A2B3" stroke-width="1.2"/>
+<text x="244.0" y="514.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#475467">gateway:  +  parallel (AND),   ×  choice (XOR)</text>
+<text x="518.0" y="514.0" text-anchor="start" dominant-baseline="central" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11.5px;font-weight:400" fill="#98A2B3">|| = concurrent    | = exclusive choice</text>
+<text x="48.0" y="540.0" text-anchor="start" style="font-family:Inter, 'Helvetica Neue', Arial, sans-serif;font-size:11px;font-weight:400;font-style:italic" fill="#98A2B3">Enabled activities are read from screenshots; the action screen's menu carries the role's gated options, so kappa sees a per-role enabled signature.</text>
+</svg>
