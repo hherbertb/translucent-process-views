@@ -62,6 +62,39 @@ have continued. `strict` cannot use that and needs two executions, which is why
 it stops at three views. The repair of the loop limitation therefore comes from
 the translucent information itself, not from a syntactic rewrite.
 
+## What folding costs in model quality
+
+One model per view, built from the view's identifier, metrics case-frequency
+weighted over the views (`view_model_quality(mode="identifier")`):
+
+| max. rework | mode | #models | fitness | precision | generalisation | simplicity |
+|---:|---|---:|---:|---:|---:|---:|
+| 2 | κ | 3 | 1.000 | 0.667 | 0.750 | 0.835 |
+| 2 | strict | 3 | 1.000 | 0.650 | 0.698 | 0.833 |
+| 2 | enabled | **2** | 1.000 | 0.658 | 0.733 | 0.827 |
+| 4 | κ | 5 | 1.000 | 0.667 | 0.747 | 0.834 |
+| 4 | strict | 3 | 1.000 | 0.649 | 0.751 | 0.833 |
+| 4 | enabled | **2** | 1.000 | 0.655 | 0.733 | 0.827 |
+| 6 | κ | 7 | 1.000 | 0.667 | 0.701 | 0.834 |
+| 6 | strict | 3 | 1.000 | 0.649 | 0.752 | 0.833 |
+| 6 | enabled | **2** | 1.000 | 0.655 | 0.733 | 0.827 |
+| 10 | κ | 7 | 1.000 | 0.667 | 0.722 | 0.834 |
+| 10 | strict | 3 | 1.000 | 0.649 | 0.698 | 0.833 |
+| 10 | enabled | **2** | 1.000 | 0.655 | 0.640 | 0.827 |
+
+**Fitness stays exactly 1.000**: the folded model accepts every iteration count,
+which is what folding is for. The price is about 0.012 precision — the model
+allows repetition the traces in that view did not all take — for 7 models down
+to 2.
+
+Per view at `max_rework = 4` the trade is sharper than the weighted average
+suggests: κ's five unrolled views each score precision 0.667 but their
+generalisation decays with the iteration count (0.759, 0.689, 0.554, 0.437,
+0.254 — the long traces are each supported by a handful of cases), while the
+single folded view scores 0.636 precision at 0.427 generalisation. Folding moves
+the cost from "many models each fitted to one length" to "one model that admits
+a length it did not see".
+
 ## Where it does not help: the Odoo logs
 
 Views induced over handoff segments, GUI channel:
