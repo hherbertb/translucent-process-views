@@ -74,6 +74,26 @@ profile they match best.
 
 On noise-free logs nothing is folded and the result equals `induce_views`.
 
+## Loops
+
+The identifiers of Definition 4.1 have no loop operator, so repetition is unrolled: a trace that
+runs a rework loop twice and the same trace running it five times get different identifiers. The
+`loop` extension folds a repeated block back into `loop(...)` -- the process tree `*(K, tau)`,
+"K one or more times":
+
+    from tpv.views.abstraction import kappa
+    from tpv.views.views import induce_views
+
+    induce_views(log, loops="enabled")      # 2 views on the rework-loop log, any loop bound
+    induce_views(log, loops="strict")       # 3 views
+    induce_views(log)                       # 1..7 views, growing with the loop bound
+
+`strict` folds a block pattern that was *executed* at least twice. `enabled` also folds a pattern
+executed once whose activities are still in the local choice set of the following position -- the
+enabled activities show that the loop *could* have continued -- which is what makes the view count
+independent of how often the loop ran. Folding is off by default, so `kappa(sigma)` remains
+Definition 4.10 exactly. See `evaluation/LOOP_OPERATOR_RESULTS.md`.
+
 ## Reproducing the Evaluation
 
 All runners pin `PYTHONHASHSEED=0` on start (`evaluation/_repro.py`): pm4py's inductive miner and
@@ -110,6 +130,40 @@ no classical variant occurs in more than one group, which would make the experim
 directly-follows overlap between groups, and how many cases share a classical variant across
 groups).
 
+### Translucent logs from a real system (Odoo)
+
+`simulation/` runs scripted agents in a local **Odoo 17 Community** through Playwright and records,
+for every click, both what the screen offered and what the server would have accepted. It answers
+the objection that replay-enriched logs assume the model whose views are then discovered: here the
+enabled sets come from Odoo's own state machine and `res.groups`.
+
+    cd simulation                                   # needs Docker Desktop
+    python -m venv .venv
+    .venv\Scripts\python -m pip install -r requirements.txt
+    .venv\Scripts\python -m playwright install chromium
+    .venv\Scripts\python -m sim.fetch_addons
+    docker compose up -d
+    .venv\Scripts\python -m sim.bootstrap
+    .venv\Scripts\python -m sim.run --scenario p2p_shared --cases 40 --seed 31 --out output/run1
+
+Two scenarios exist for the role-overlap experiment, and they are a pair:
+
+| scenario | overlap | expected |
+|---|---|---|
+| `p2p_shared` | **group-gated**: at *to approve*, `purchase.group_purchase_manager` offers the manager `Approve Order` and the buyer not, while both may `Change Order` / `Cancel Order` | the enabled sets separate the roles |
+| `o2c_shared` | **convention**: the sales roles have identical rights on every document of that process and differ only in who acts | nothing can separate them; `kappa` must score at the blind baseline |
+
+Two scripts evaluate such a log. Run the first *before* generating at scale:
+
+    venv\Scripts\python evaluation\check_overlap.py    <events.csv> --unit segment
+    venv\Scripts\python evaluation\compare_channels.py <events.csv> --unit segment
+
+`check_overlap.py` asks whether the log can demonstrate the claim at all -- whether the same
+executed behaviour occurs under more than one role -- and fails a log whose executed activities
+already determine the role. `compare_channels.py` runs `kappa` over each enabled channel against a
+baseline that sees only the executed activities, overall and restricted to the contested traces.
+Results and the sample sizes they need: `evaluation/ODOO_OVERLAP_RESULTS.md`.
+
 ### Checking the results
 
     venv\Scripts\python evaluation\verify_results.py     "paper_final\ICPM_2026__Translucent_Variants(4)"
@@ -135,3 +189,4 @@ aggregation code. `verify_independent.py` re-implements the abstraction function
 | `tpv/quality` | fitness, precision and their translucent counterparts |
 | `evaluation` | experiment runners, baselines, metrics, verification scripts, result CSVs |
 | `app` | small Streamlit GUI for inspecting views |
+| `simulation` | scripted agents working in a local Odoo 17, producing translucent logs from a real system |
