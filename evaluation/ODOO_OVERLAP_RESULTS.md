@@ -66,6 +66,40 @@ On the shipped `purchase_to_pay` log κ **lost** to the blind baseline:
 | κ / backend, document | 0.665 |
 | κ / backend, case | 0.608 |
 
+### The negative control (`o2c_shared`, 40 cases, 156 segments)
+
+`p2p_shared` places the overlap where the roles' *access rights* differ.
+`o2c_shared` places it where they do not: the sales roles hold identical rights
+on every document of order-to-cash and differ only in who acts by convention.
+κ must therefore score at the blind baseline, and a method that scored above it
+would be fitting noise.
+
+| grouping | groups | ARI | NMI |
+|---|---:|---:|---:|
+| executed sequence (no enabled info) | 50 | 0.234 | 0.549 |
+| κ / GUI (screen) | 51 | 0.233 | 0.547 |
+| κ / backend, document scope | 51 | 0.233 | 0.547 |
+| κ / backend, case scope | 58 | 0.131 | 0.472 |
+
+Contested traces only, 16 of 156 (10.3 %):
+
+| grouping | ARI on contested |
+|---|---:|
+| κ / GUI | **0.000** |
+| κ / backend, document | **0.000** |
+| κ / backend, case | −0.068 |
+
+Exactly zero: where the roles differ only by convention, the enabled sets carry
+no information about which of them acted. Against 0.640 for the same statistic
+on `p2p_shared`, this is the dissociation the evaluation needs — the gain is a
+property of *rights-gated* overlap, not of the construction.
+
+Which placements in order-to-cash were ruled out, and why, is in the docstring of
+`simulation/sim/o2c_shared.py`; the short version is that `sales` and
+`sales_manager` are indistinguishable on every document of the process, and the
+one role whose rights do differ (`warehouse`) is refused the sales-order *screen*
+by the web client although the server accepts its writes.
+
 ## Findings
 
 1. **Document scope is the right semantics for "enabled".** Case scope sits at or
@@ -107,5 +141,9 @@ venv\Scripts\python evaluation\check_overlap.py    <events.csv> --unit segment
 venv\Scripts\python evaluation\compare_channels.py <events.csv> --unit segment
 ```
 
-`check_overlap.py`'s ≥50 % threshold is a placeholder and should probably become a
-minimum contested *count* instead.
+`check_overlap.py` now gates on a contested *count* (PASS ≥ 100, THIN ≥ 30)
+rather than the ≥ 50 % fraction placeholder, because the fraction is the wrong
+bar for a generated log and the contested ARI is what needs the sample. Under
+that gate both 40-case runs FAIL: big enough to see the effect, too small to
+quote. A 250-case `p2p_shared` run (seed 31, `output/shared_n250`) is what the
+paper should cite; at 16 contested segments per 40 cases it should land near 100.
